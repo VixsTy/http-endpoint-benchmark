@@ -1,0 +1,11 @@
+{
+  "name": "nodejs-express",
+  "version": "1.0.0",
+  "description": "REST API benchmark",
+  "main": "app.js",
+  "author": "Kevin LARQUEMIN",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
