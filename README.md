@@ -1,6 +1,20 @@
 # Bench simple hello-world HTTP endpoint
 
+## resume
+
+| Tech              | req/s wrk | req/s fortio | cpu      | ram      |
+| ----------------- | ---------:| ------------:| --------:| --------:|
+| node with express | 10790     | 11533        | 1 vcpu   | 75,5 Mo  |
+| vertx-web         | 2989      | 2820         | all pcpu | 141,5 Mo |
+| golang with goji  | 41360     | 47019        | all vcpu | 13,9 Mo  |
+| ruby on rails     | 1325      | NA           | 1 vcpu   | 58,4 Mo  |
+
 ## node with express
+
+CPU : 1 vcpu
+RAM : 75,5 Mo
+
+### wrk
 
 ```
 wrk -t12 -c400 -d30s http://localhost:3000        
@@ -14,7 +28,8 @@ Running 30s test @ http://localhost:3000
 Requests/sec:  10790.20
 Transfer/sec:      2.22MB
 ```
-RAM : 75,5 Mo
+
+### fortio
 
 ```
 ./fortio load -c 12 -t 30s -qps 0 http://127.0.0.1:3000
@@ -53,6 +68,10 @@ All done 346012 calls (plus 12 warmup) 1.040 ms avg, 11533.3 qps
 
 ## vertx and vertx-web
 
+CPU : all pcpu
+RAM : 141,5 Mo
+
+### wrk
 ```
 wrk -t12 -c400 -d30s http://localhost:8080
 Running 30s test @ http://localhost:8080
@@ -65,7 +84,8 @@ Running 30s test @ http://localhost:8080
 Requests/sec:   2989.15
 Transfer/sec:    148.87KB
 ```
-RAM : 141,5 Mo
+
+### fortio
 
 ```
 ./fortio load -c 12 -t 30s -qps 0 http://127.0.0.1:8080
@@ -117,6 +137,11 @@ All done 84629 calls (plus 12 warmup) 4.254 ms avg, 2820.7 qps
 
 ## golang with goji
 
+CPU : use all vcpu
+RAM : 13,9 Mo
+
+### wrk
+
 ```
 wrk -t12 -c400 -d30s http://localhost:8000
 Running 30s test @ http://localhost:8000
@@ -129,7 +154,8 @@ Running 30s test @ http://localhost:8000
 Requests/sec:  41360.20
 Transfer/sec:      5.13MB
 ```
-RAM : 13,9 Mo
+
+### fortio
 
 ```
 ./fortio load -c 12 -t 30s -qps 0 http://127.0.0.1:8000
@@ -164,3 +190,27 @@ Response Header Sizes : count 1410594 avg 117 +/- 0 min 117 max 117 sum 16503949
 Response Body/Total Sizes : count 1410594 avg 130 +/- 0 min 130 max 130 sum 183377220
 All done 1410594 calls (plus 12 warmup) 0.255 ms avg, 47019.5 qps
 ```
+
+
+## Ruby On Rails
+
+CPU : use 1vcpu
+RAM : 58,4 Mo
+
+### wrk
+
+```
+wrk -t12 -c400 -d30s http://localhost:3000/hello             
+Running 30s test @ http://localhost:3000/hello
+  12 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     3.76ms  635.58us  33.59ms   88.76%
+    Req/Sec   667.49    137.55   848.00     56.17%
+  39883 requests in 30.09s, 10.61MB read
+  Socket errors: connect 0, read 376, write 0, timeout 0
+Requests/sec:   1325.58
+Transfer/sec:    361.18KB
+```
+
+### fortio
+Fortio error at launch.
