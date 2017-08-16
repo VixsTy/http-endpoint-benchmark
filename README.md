@@ -12,7 +12,7 @@ Targetting µServices, so i add some common framework to tha basic languages.
 | golang with goji  | 41360     | 47019        | 3/8 vcpu | 13,9 MB  |
 | ruby on rails     | 1325      | NA           | 1/8 vcpu | 58,4 MB  |
 | node with cluster | 32046     | 28232        | 8/8 vcpu | 508  MB  |
-| rust (iron.io)    | 97093     | -            | 8/8 vcpu | 118 MB   |
+| rust (iron.io)    | 97333     | -            | 8/8 vcpu | 118 MB   |
 
 ## node with express
 
@@ -302,20 +302,20 @@ CPU: 8/8 vcpu RAM: 118MB
 ### wrk
 
 ```
-$ wrk --latency -t12 -c100 -d10s http://localhost:3000/
-Running 10s test @ http://localhost:3000/
-  12 threads and 100 connections
+$ wrk --latency -t12 -c400 -d30s http://localhost:3000/
+Running 30s test @ http://localhost:3000/
+  12 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   359.75us  688.16us  43.02ms   97.96%
-    Req/Sec    24.42k     3.04k   36.05k    71.96%
+    Latency   335.55us  660.88us  84.18ms   98.54%
+    Req/Sec    32.63k    14.62k   81.04k    59.42%
   Latency Distribution
-     50%  274.00us
-     75%  401.00us
-     90%  565.00us
-     99%    1.66ms
-  979730 requests in 10.09s, 106.52MB read
-Requests/sec:  97093.53
-Transfer/sec:     10.56MB
+     50%  270.00us
+     75%  393.00us
+     90%  537.00us
+     99%    1.16ms
+  2929204 requests in 30.09s, 318.46MB read
+Requests/sec:  97333.35
+Transfer/sec:     10.58MB
 ```
 
 ### fortio
