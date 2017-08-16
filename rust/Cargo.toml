@@ -1,0 +1,8 @@
+[package]
+name = "hello-world"
+version = "0.1.0"
+authors = ["Normand, Thibault <thibault.normand@continental-corporation.com>"]
+
+[dependencies.iron]
+version = "*"
+

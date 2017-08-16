@@ -7,16 +7,17 @@ Targetting µServices, so i add some common framework to tha basic languages.
 
 | Tech              | req/s wrk | req/s fortio | cpu      | ram      |
 | ----------------- | ---------:| ------------:| --------:| --------:|
-| node with express | 10790     | 11533        | 1/8 vcpu | 75,5 Mo  |
-| vertx-web         | 2989      | 2820         | 4/8 vcpu | 141,5 Mo |
-| golang with goji  | 41360     | 47019        | 3/8 vcpu | 13,9 Mo  |
-| ruby on rails     | 1325      | NA           | 1/8 vcpu | 58,4 Mo  |
-| node with cluster | 32046     | 28232        | 8/8 vcpu | 508  Mo  |
+| node with express | 10790     | 11533        | 1/8 vcpu | 75,5 MB  |
+| vertx-web         | 2989      | 2820         | 4/8 vcpu | 141,5 MB |
+| golang with goji  | 41360     | 47019        | 3/8 vcpu | 13,9 MB  |
+| ruby on rails     | 1325      | NA           | 1/8 vcpu | 58,4 MB  |
+| node with cluster | 32046     | 28232        | 8/8 vcpu | 508  MB  |
+| rust (iron.io)    | 97093     | -            | 8/8 vcpu | 118 MB   |
 
 ## node with express
 
 CPU : 1/8 vcpu
-RAM : 75,5 Mo
+RAM : 75,5 MB
 
 ### wrk
 
@@ -73,7 +74,7 @@ All done 346012 calls (plus 12 warmup) 1.040 ms avg, 11533.3 qps
 ## vertx and vertx-web
 
 CPU : NA process take 1 virtual cpu but global usage hit the 4 physical cpu
-RAM : 141,5 Mo
+RAM : 141,5 MB
 
 ### wrk
 ```
@@ -142,7 +143,7 @@ All done 84629 calls (plus 12 warmup) 4.254 ms avg, 2820.7 qps
 ## golang with goji
 
 CPU : 3/8 vcpu
-RAM : 13,9 Mo
+RAM : 13,9 MB
 
 ### wrk
 
@@ -199,7 +200,7 @@ All done 1410594 calls (plus 12 warmup) 0.255 ms avg, 47019.5 qps
 ## Ruby On Rails
 
 CPU : 1/8 vcpu
-RAM : 58,4 Mo
+RAM : 58,4 MB
 
 ### wrk
 
@@ -222,7 +223,7 @@ Fortio error at launch.
 ## NodeJS with cluster module
 
 CPU : 8/8 vcpu
-RAM : 8 x 60 Mo + 1 x 28 Mo (508 Mo)
+RAM : 8 x 60 MB + 1 x 28 Mo (508 MB)
 
 note : the best rendering take with 3/8 vcpu (1 master and 2 fork), arround 27k req/s.
 
@@ -293,3 +294,30 @@ Response Header Sizes : count 847007 avg 204 +/- 0 min 204 max 204 sum 172789428
 Response Body/Total Sizes : count 847007 avg 216 +/- 0 min 216 max 216 sum 182953512
 All done 847007 calls (plus 12 warmup) 0.425 ms avg, 28232.9 qps
 ```
+
+## Rust (iron.io)
+
+CPU: 8/8 vcpu RAM: 118MB
+
+### wrk
+
+```
+$ wrk --latency -t12 -c100 -d10s http://localhost:3000/
+Running 10s test @ http://localhost:3000/
+  12 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   359.75us  688.16us  43.02ms   97.96%
+    Req/Sec    24.42k     3.04k   36.05k    71.96%
+  Latency Distribution
+     50%  274.00us
+     75%  401.00us
+     90%  565.00us
+     99%    1.66ms
+  979730 requests in 10.09s, 106.52MB read
+Requests/sec:  97093.53
+Transfer/sec:     10.56MB
+```
+
+### fortio
+
+`Not done`
