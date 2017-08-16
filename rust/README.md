@@ -24,7 +24,8 @@ $ ./target/release/hello-world
 
 ## Bench
 
-CPU: 8/8 vcpu RAM: 118MB
+> CPU: 8/8 vcpu
+> RAM: 118MB
 
 ### wrk
 

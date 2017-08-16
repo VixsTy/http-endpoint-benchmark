@@ -28,8 +28,8 @@ $ node app.js
 
 ## NodeJS with cluster module
 
-CPU : 8/8 vcpu
-RAM : 8 x 60 MB + 1 x 28 Mo (508 MB)
+> CPU : 8/8 vcpu
+> RAM : 8 x 60 MB + 1 x 28 Mo (508 MB)
 
 note : the best rendering take with 3/8 vcpu (1 master and 2 fork), arround 27k req/s.
 

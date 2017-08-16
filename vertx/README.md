@@ -22,8 +22,8 @@ $ java -jar target/maven-simplest-3.4.2-fat.jar
 
 ## Bench
 
-CPU : NA process take 1 virtual cpu but global usage hit the 4 physical cpu
-RAM : 141,5 MB
+> CPU : NA process take 1 virtual cpu but global usage hit the 4 physical cpu
+> RAM : 141,5 MB
 
 ### wrk
 ```

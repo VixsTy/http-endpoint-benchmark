@@ -26,8 +26,8 @@ $ rails server -e production
 
 ## Bench
 
-CPU : 1/8 vcpu
-RAM : 58,4 MB
+> CPU : 1/8 vcpu
+> RAM : 58,4 MB
 
 ### wrk
 

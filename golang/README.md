@@ -27,8 +27,8 @@ $ ./hello
 
 ## Bench
 
-CPU : 8/8 vcpu
-RAM : 13,9 MB
+> CPU : 8/8 vcpu
+> RAM : 13,9 MB
 
 ### wrk
 

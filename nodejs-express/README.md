@@ -26,8 +26,8 @@ $ node app.js
 
 ## Bench
 
-CPU : 1/8 vcpu
-RAM : 75,5 MB
+> CPU : 1/8 vcpu
+> RAM : 75,5 MB
 
 ### wrk
 
