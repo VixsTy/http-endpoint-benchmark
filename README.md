@@ -28,5 +28,6 @@ All tests were launched under similar conditions
 | vertx-web         | 2989      | 2820         | 4/8 vcpu | 141,5 MB |
 | golang with goji  | 41360     | 47019        | 8/8 vcpu | 13,9 MB  |
 | ruby on rails     | 1325      | NA           | 1/8 vcpu | 58,4 MB  |
-| node with cluster | 32046     | 28232        | 8/8 vcpu | 508  MB  |
+| node with cluster | 32046     | 28232        | 8/8 vcpu | 508 MB  |
 | rust (iron.io)    | 52052     | 50562        | 8/8 vcpu | 5,6 MB   |
+| spring boot       | 14860     | NA           | 8/8 vcpu | 1,40 GB  |
