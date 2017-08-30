@@ -17,7 +17,7 @@ $ mvn clean install
 ## Start
 
 ```sh
-$ java -jar target/maven-simplest-3.4.2-fat.jar
+$ java -jar target/maven-simplest-3.5.0.Beta1-fat.jar
 ```
 
 ## Bench
@@ -27,64 +27,54 @@ $ java -jar target/maven-simplest-3.4.2-fat.jar
 
 ### wrk
 ```
-$ wrk -t12 -c400 -d30s http://localhost:8080
+$ wrk -t12 -c400 -d30s http://localhost:8080         
 Running 30s test @ http://localhost:8080
   12 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   129.80ms   12.39ms 155.59ms   90.03%
-    Req/Sec   250.38     39.46   480.00     67.94%
-  89890 requests in 30.07s, 4.37MB read
-  Socket errors: connect 0, read 262, write 0, timeout 0
-Requests/sec:   2989.15
-Transfer/sec:    148.87KB
+    Latency     6.18ms    2.19ms 162.11ms   90.10%
+    Req/Sec     5.21k     0.85k    8.15k    88.14%
+  1865539 requests in 30.02s, 90.73MB read
+  Socket errors: connect 0, read 321, write 0, timeout 0
+Requests/sec:  62146.51
+Transfer/sec:      3.02MB
 ```
 
 ### fortio
 
 ```
-$ ./fortio load -c 12 -t 30s -qps 0 http://127.0.0.1:8080
+$ ./fortio load -c 12 -t 30s -qps 0 http://127.0.0.1:8080         
 Fortio running at 0 queries per second, 8->8 procs, for 30s: http://127.0.0.1:8080
-19:01:41 I httprunner.go:75> Starting http test for http://127.0.0.1:8080 with 12 threads at 0.0 qps
+17:15:34 I httprunner.go:75> Starting http test for http://127.0.0.1:8080 with 12 threads at 0.0 qps
 Starting at max qps with 12 thread(s) [gomax 8] for 30s
-19:02:11 I periodic.go:253> T005 ended after 30.000213945s : 7052 calls. qps=235.06499030068835
-19:02:11 I periodic.go:253> T000 ended after 30.000364697s : 7051 calls. qps=235.0304761696811
-19:02:11 I periodic.go:253> T002 ended after 30.000543646s : 7051 calls. qps=235.02907424613008
-19:02:11 I periodic.go:253> T010 ended after 30.00100924s : 7051 calls. qps=235.02542676460976
-19:02:11 I periodic.go:253> T009 ended after 30.001039526s : 7051 calls. qps=235.02518950682844
-19:02:11 I periodic.go:253> T003 ended after 30.001413157s : 7052 calls. qps=235.05559431805
-19:02:11 I periodic.go:253> T007 ended after 30.001446286s : 7052 calls. qps=235.05533475867043
-19:02:11 I periodic.go:253> T004 ended after 30.001787167s : 7054 calls. qps=235.119326749939
-19:02:11 I periodic.go:253> T006 ended after 30.001847893s : 7052 calls. qps=235.05218829022078
-19:02:11 I periodic.go:253> T001 ended after 30.002214425s : 7053 calls. qps=235.08264757027183
-19:02:11 I periodic.go:253> T008 ended after 30.00226982s : 7054 calls. qps=235.1155443345053
-19:02:11 I periodic.go:253> T011 ended after 30.002628414s : 7056 calls. qps=235.17939503951888
-Ended after 30.002649249s : 84629 calls. qps=2820.7
-Aggregated Function Time : count 84629 avg 0.0042538702 +/- 0.0006206 min 0.001592278 max 0.0329177 sum 360.000784
+17:16:04 I periodic.go:253> T004 ended after 30.000010869s : 167277 calls. qps=5575.897979852161
+17:16:04 I periodic.go:253> T010 ended after 30.00006772s : 167018 calls. qps=5567.254099518413
+17:16:04 I periodic.go:253> T005 ended after 30.000078544s : 167244 calls. qps=5574.785404468506
+17:16:04 I periodic.go:253> T008 ended after 30.000075639s : 167219 calls. qps=5573.952613059943
+17:16:04 I periodic.go:253> T006 ended after 30.00008205s : 166990 calls. qps=5566.318109453304
+17:16:04 I periodic.go:253> T007 ended after 30.000106901s : 166636 calls. qps=5554.5135405649335
+17:16:04 I periodic.go:253> T000 ended after 30.000083275s : 167340 calls. qps=5577.984516444646
+17:16:04 I periodic.go:253> T001 ended after 30.000094485s : 167223 calls. qps=5574.082444427341
+17:16:04 I periodic.go:253> T009 ended after 30.000116477s : 167285 calls. qps=5576.145016911896
+17:16:04 I periodic.go:253> T011 ended after 30.000121298s : 167372 calls. qps=5579.044109103588
+17:16:04 I periodic.go:253> T002 ended after 30.000128394s : 166626 calls. qps=5554.176229236574
+17:16:04 I periodic.go:253> T003 ended after 30.000173081s : 166981 calls. qps=5566.001221031423
+Ended after 30.000192404s : 2005211 calls. qps=66840
+Aggregated Function Time : count 2005211 avg 0.00017948018 +/- 8.893e-05 min 4.0261e-05 max 0.011964501 sum 359.895634
 # range, mid point, percentile, count
->= 0.001 < 0.002 , 0.0015 , 0.00, 3
->= 0.002 < 0.003 , 0.0025 , 0.02, 13
->= 0.003 < 0.004 , 0.0035 , 11.03, 9319
->= 0.004 < 0.005 , 0.0045 , 96.91, 72682
->= 0.005 < 0.006 , 0.0055 , 98.94, 1715
->= 0.006 < 0.007 , 0.0065 , 99.42, 406
->= 0.007 < 0.008 , 0.0075 , 99.69, 225
->= 0.008 < 0.009 , 0.0085 , 99.80, 94
->= 0.009 < 0.01 , 0.0095 , 99.91, 92
->= 0.01 < 0.011 , 0.0105 , 99.91, 6
->= 0.011 < 0.012 , 0.0115 , 99.92, 7
->= 0.012 < 0.014 , 0.013 , 99.94, 15
->= 0.014 < 0.016 , 0.015 , 99.94, 5
->= 0.016 < 0.018 , 0.017 , 99.96, 10
->= 0.018 < 0.02 , 0.019 , 99.98, 17
->= 0.02 < 0.025 , 0.0225 , 99.98, 7
->= 0.025 < 0.03 , 0.0275 , 99.99, 5
->= 0.03 < 0.035 , 0.0325 , 100.00, 8
-# target 50% 0.00445375
-# target 75% 0.00474484
-# target 99% 0.0061249
-# target 99.9% 0.00994968
-Code 200 : 84629
-Response Header Sizes : count 84629 avg 39 +/- 0 min 39 max 39 sum 3300531
-Response Body/Total Sizes : count 84629 avg 51 +/- 0 min 51 max 51 sum 4316079
-All done 84629 calls (plus 12 warmup) 4.254 ms avg, 2820.7 qps
+< 0.001 , 0.001 , 99.88, 2002830
+>= 0.001 < 0.002 , 0.0015 , 99.97, 1734
+>= 0.002 < 0.003 , 0.0025 , 99.99, 395
+>= 0.003 < 0.004 , 0.0035 , 100.00, 173
+>= 0.004 < 0.005 , 0.0045 , 100.00, 59
+>= 0.005 < 0.006 , 0.0055 , 100.00, 6
+>= 0.006 < 0.007 , 0.0065 , 100.00, 2
+>= 0.011 < 0.012 , 0.0115 , 100.00, 12
+# target 50% 0.000520701
+# target 75% 0.000760921
+# target 99% 0.000991532
+# target 99.9% 0.00121672
+Code 200 : 2005211
+Response Header Sizes : count 2005211 avg 39 +/- 0 min 39 max 39 sum 78203229
+Response Body/Total Sizes : count 2005211 avg 51 +/- 6.896e-07 min 51 max 51 sum 102265761
+All done 2005211 calls (plus 12 warmup) 0.179 ms avg, 66839.9 qps
 ```

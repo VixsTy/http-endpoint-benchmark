@@ -22,12 +22,13 @@ Mémoire :	16 Go
 
 All tests were launched under similar conditions
 
-| Tech              | req/s wrk | req/s fortio | cpu      | ram      |
-| ----------------- | ---------:| ------------:| --------:| --------:|
-| node with express | 10790     | 11533        | 1/8 vcpu | 75,5 MB  |
-| vertx-web         | 2989      | 2820         | 4/8 vcpu | 141,5 MB |
-| golang with goji  | 41360     | 47019        | 8/8 vcpu | 13,9 MB  |
-| ruby on rails     | 1325      | NA           | 1/8 vcpu | 58,4 MB  |
-| node with cluster | 32046     | 28232        | 8/8 vcpu | 508 MB  |
-| rust (iron.io)    | 52052     | 50562        | 8/8 vcpu | 5,6 MB   |
-| spring boot       | 14860     | NA           | 8/8 vcpu | 1,40 GB  |
+| Tech              | version          | req/s wrk | req/s fortio | cpu      | ram      |
+| ----------------- | ----------------:| ---------:| ------------:| --------:| --------:|
+| node with express | v8.2.1 / 4.15.4 | 10790     | 11533        | 1/8 vcpu | 75,5 MB   |
+| vertx-web         | 3.4.2           | 2989      | 2820         | 1/8 vcpu | 141,5 MB  |
+| vertx-web         | 3.5.0.Beta1     | 62146     | 66839        | 1/8 vcpu | 105,4 MB  |
+| golang with goji  | 1.8.3           | 41360     | 47019        | 8/8 vcpu | 13,9 MB   |
+| ruby on rails     | 2.4.1 / 5.1.3   | 1325      | NA           | 1/8 vcpu | 58,4 MB   |
+| node with cluster | v8.2.1 / 4.15.4 | 32046     | 28232        | 8/8 vcpu | 508 MB    |
+| rust (iron.io)    | 1.5.0           | 52052     | 50562        | 8/8 vcpu | 5,6 MB    |
+| spring boot       | 1.5.6           | 14860     | NA           | 8/8 vcpu | 1,40 GB   |
