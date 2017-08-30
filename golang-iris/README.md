@@ -1,6 +1,6 @@
 # Goji Hello World HTTP Server
 
-Using [goji.io](https://goji.io/) web framework.
+Using [iris](https://iris-go.com/) web framework.
 
 ## Build
 
@@ -10,13 +10,13 @@ Using [goji.io](https://goji.io/) web framework.
 
 ```sh
 $ bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-$ gvm install go1.8.3 -B --default
+$ gvm install go1.9.0 -B --default
 ```
 
   2. Build a release binary
 
 ```sh
-$ go build hello.go
+$ go build main.go
 ```
 
 ## Start

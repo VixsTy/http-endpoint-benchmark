@@ -32,3 +32,25 @@ All tests were launched under similar conditions
 | node with cluster | v8.2.1 / 4.15.4 | 32046     | 28232        | 8/8 vcpu | 508 MB    |
 | rust (iron.io)    | 1.5.0           | 52052     | 50562        | 8/8 vcpu | 5,6 MB    |
 | spring boot       | 1.5.6           | 14860     | NA           | 8/8 vcpu | 1,40 GB   |
+
+## Other hardware
+
+```
+CPU: Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz
+RAM: 32 GB
+DD: SSD Samsung 850 Evo Pro (BTRFS+Luks)
+OS: Archlinux - Linux zigurath 4.12.8-2-ARCH #1 SMP PREEMPT Fri Aug 18 14:08:02 UTC 2017 x86_64 GNU/Linux
+```
+
+| Tech              | version          | req/s wrk | req/s fortio | cpu      | ram      |
+| ----------------- | ----------------:| ---------:| ------------:| --------:| --------:|
+| node with express | v8.2.1 / 4.15.4 | 15619     | -            | 1/8 vcpu | 78,4MB    |
+| vertx-web         | 3.4.2           | -         | -            | 1/8 vcpu | -         |
+| vertx-web         | 3.5.0.Beta1     | 125514    | -            | 1/8 vcpu | 232 MB    |
+| golang with goji  | 1.9.0 / master  | 228509    | -            | 8/8 vcpu | 23,0 MB   |
+| golang with iris  | 1.9.0 / 8.4.0   | 253615    | -            | 8/8 vcpu | 27,7 MB   |
+| ruby on rails     | 2.4.1 / 5.1.3   | NA        | -            | 1/8 vcpu | -         |
+| node with cluster | v8.2.1 / 4.15.4 | 60426     | -            | 8/8 vcpu | 613 MB    |
+| rust (iron.io)    | 1.5.0 / 0.5.1   | 294476    | -            | 8/8 vcpu | 118 MB    |
+| spring boot       | 1.5.6           | 22081     | -            | 8/8 vcpu | 881 MB    |
+| python3 flask     | 3.6.2 / 0.12.2  | 2020      | -            | 1/8 vcpu | 27,4 MB   |
