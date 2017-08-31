@@ -16,5 +16,5 @@ func main() {
 	mux := goji.NewMux()
 	mux.HandleFunc(pat.Get("/"), hello)
 
-	http.ListenAndServe("localhost:8000", mux)
+	http.ListenAndServe(":8000", mux)
 }
