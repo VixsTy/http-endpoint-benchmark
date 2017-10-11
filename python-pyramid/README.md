@@ -5,8 +5,8 @@
   1. Prepare a virtualenv
 
 ```sh
-$ virtualenv flask
-$ source flask/bin/activate
+$ virtualenv pyramid
+$ source pyramid/bin/activate
 ```
 
   2. Install dependencies
