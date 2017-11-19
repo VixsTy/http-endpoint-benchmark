@@ -54,7 +54,8 @@ OS: Archlinux - Linux zigurath 4.12.8-2-ARCH #1 SMP PREEMPT Fri Aug 18 14:08:02 
 | rust (iron.io)    | 1.5.0 / 0.5.1   | 294476    | -            | 8/8 vcpu | 118 MB    |
 | spring boot       | 1.5.6           | 22081     | -            | 8/8 vcpu | 881 MB    |
 | python3 flask     | 3.6.2 / 0.12.2  | 2020      | -            | 1/8 vcpu | 27,4 MB   |
-| nodeuv-http       |                 | 64357     | -            | 1/8 vpcu | 4.1 Mb    |
+| nodeuv-http       | ?               | 64357     | -            | 1/8 vcpu | 4.1 MB    |
+| evpp              | ?               | 95509     | -            | 2/8 vcpu | 458 MB    |
 
 ## Other hardware
 
