@@ -66,17 +66,16 @@ DD: SSD Samsung 850 Evo 500G
 OS: Linux 4.10.0-35-generic #39-Ubuntu SMP Wed Sep 13 07:46:59 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-| Tech              | version          | req/s wrk | req/s fortio | cpu      | ram      |
-| ----------------- | ----------------:| ---------:| ------------:| --------:| --------:|
-| node with express | v8.2.1 / 4.15.4 | -          | -            | 1/8 vcpu | -        |
-| vertx-web         | 3.4.2           | -          | -            | 1/8 vcpu | -        |
-| vertx-web         | 3.5.0.Beta1     | -          | -            | 1/8 vcpu | -        |
-| golang with goji  | 1.9.0 / master  | 85433      | -            | 8/8 vcpu | -        |
-| golang with iris  | 1.9.0 / 8.4.0   | -          | -            | 8/8 vcpu | -        |
+| Tech              | version         | req/s wrk  | req/s fortio | cpu      | ram      |
+| ----------------- | ---------------:| ----------:| ------------:| --------:| --------:|
+| node with express | v8.9.1 / 4.15.4 | 10 853     | -            | 1/8 vcpu | -        |
+| vertx-web         | 3.5.0           | 87 325     | -            | 1/8 vcpu | -        |
+| golang with goji  | 1.9.1 / master  | 121 470    | -            | 8/8 vcpu | -        |
+| golang with iris  | 1.9.1 / 8.5.7   | 141 641    | -            | 8/8 vcpu | -        |
 | ruby on rails     | 2.4.1 / 5.1.3   | -          | -            | 1/8 vcpu | -        |
 | node with cluster | v8.2.1 / 4.15.4 | -          | -            | 8/8 vcpu | -        |
-| rust (iron.io)    | 1.5.0 / 0.5.1   | 92328      | -            | 8/8 vcpu | 118 MB   |
+| rust (iron.io)    | 1.22.1 / 0.6.0  | 145758     | -            | 8/8 vcpu | -        |
 | spring boot       | 1.5.6           | -          | -            | 8/8 vcpu | -        |
-| python3 flask     | 2.7.13 / 0.12.2 | -          | -            | 1/8 vcpu | -        |
-| python3 falcon    | 2.7.13 / 1.3.0  | 913        | -            | 1/8 vcpu | 63.4 MB  |
-| python3 pyramid   | 2.7.13 / 1.9.1  | 830        | -            | 1/8 vcpu | 51,9 MB  |
+| python3 flask     | 3.5.3 / 0.12.2  | 929        | -            | 1/8 vcpu | -        |
+| python3 falcon    | 3.5.3 / 1.3.0   | 930        | -            | 1/8 vcpu | -        |
+| python3 pyramid   | 3.5.3 / 1.9.1   | 881        | -            | 1/8 vcpu | -        |
