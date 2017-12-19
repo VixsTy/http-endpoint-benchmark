@@ -10,8 +10,11 @@ Using [iris](https://iris-go.com/) web framework.
 
 ```sh
 $ bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-$ gvm install go1.9.0 -B --default
+$ gvm install go1.9.2 -B
+$ gvm use go1.9.2
+$ go get -u github.com/kataras/iris
 ```
+
 
   2. Build a release binary
 
@@ -22,7 +25,7 @@ $ go build main.go
 ## Start
 
 ```sh
-$ ./hello
+$ ./main
 ```
 
 ## Bench
@@ -33,8 +36,8 @@ $ ./hello
 ### wrk
 
 ```
-$ wrk -t12 -c400 -d30s http://localhost:8000
-Running 30s test @ http://localhost:8000
+$ wrk -t12 -c400 -d30s http://localhost:8080
+Running 30s test @ http://localhost:8080
   12 threads and 400 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
     Latency     9.32ms    1.79ms  25.92ms   70.31%
@@ -48,8 +51,8 @@ Transfer/sec:      5.13MB
 ### fortio
 
 ```
-$ ./fortio load -c 12 -t 30s -qps 0 http://127.0.0.1:8000
-Fortio running at 0 queries per second, 8->8 procs, for 30s: http://127.0.0.1:8000
+$ ./fortio load -c 12 -t 30s -qps 0 http://127.0.0.1:8080
+Fortio running at 0 queries per second, 8->8 procs, for 30s: http://127.0.0.1:8080
 18:15:07 I httprunner.go:75> Starting http test for http://127.0.0.1:8000 with 12 threads at 0.0 qps
 Starting at max qps with 12 thread(s) [gomax 8] for 30s
 18:15:37 I periodic.go:253> T001 ended after 30.00003506s : 117547 calls. qps=3918.228754229996
