@@ -10,7 +10,9 @@ Using [goji.io](https://goji.io/) web framework.
 
 ```sh
 $ bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-$ gvm install go1.8.3 -B --default
+$ gvm install go1.9.2 -B
+$ gvm use go1.9.2
+$ go get goji.io
 ```
 
   2. Build a release binary
