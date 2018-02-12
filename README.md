@@ -79,3 +79,17 @@ OS: Linux 4.10.0-35-generic #39-Ubuntu SMP Wed Sep 13 07:46:59 UTC 2017 x86_64 x
 | python3 flask     | 3.5.3 / 0.12.2  | 929        | -            | 1/8 vcpu | -        |
 | python3 falcon    | 3.5.3 / 1.3.0   | 930        | -            | 1/8 vcpu | -        |
 | python3 pyramid   | 3.5.3 / 1.9.1   | 881        | -            | 1/8 vcpu | -        |
+
+## Amazon EC2 m5.12xlarge 48 vCPU 192GBRAM (2018/02/11)
+```
+CPU: 48
+RAM: 192GB
+OS: Ubuntu 16.04LTS
+```
+
+| Tech              | version         | req/s wrk  | req/s fortio | cpu        | ram      |
+| ----------------- | ---------------:| ----------:| ------------:| ----------:| --------:|
+| golang with goji  | 1.9.4 / master  | 283849     | -            | 48/48 vcpu | -        |
+| golang with iris  | 1.9.4 / master  | 550496     | -            | 48/48 vcpu | -        |
+| rust (iron.io)    | 1.23.0 / 0.6.0  | 781727     | -            | 48/48 vcpu | -        |
+| proxygen          | v2018.02.05.00  | 986874     | -            | 48/48 vcpu | -        |
